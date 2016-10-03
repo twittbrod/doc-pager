@@ -1,0 +1,28 @@
+<h1 class="clearfix" style="display:block;width:100%;text-align:center"> Doctor Pager</h1>
+<div class="pull-right">
+    <button *ngIf="!loginComplete" (click)="showLoginPopUp()" class="btn btn-primary" style="margin-right:20px;"> 
+        Login with Spark 
+    </button>
+    <div *ngIf="!!profile">
+        Logged in as <b> {{profile.displayName}} </b>
+    </div>
+</div>
+<div class="clearfix"></div>
+
+
+<div class="container-fluid row form-group">
+    <div class="col-sm-6 top-buffer">
+        <room-list (selectedRoomChange)="triggerRoomChange($event)" [loginComplete]="loginComplete"></room-list>
+    </div>
+    <div class="col-sm-6 top-buffer">
+        <doctor-list [selectedRoom]="selectedRoom" (doctorSelectedEvent)="currentDoctor=$event"></doctor-list>
+    </div>
+    <div class="col-xs-12 top-buffer">
+        <message-list [doctorSelected]="currentDoctor"></message-list>
+    </div>
+</div>
+<footer>
+    <h4 class="text-center" style="text-align:center;width:100%;margin-top:10vh">
+        <small>Powered By <b>WebileApps</b></small>
+    </h4>
+</footer>

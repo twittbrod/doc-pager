@@ -1,0 +1,7 @@
+extends ../layouts/admin.jade
+block content
+    include ../layouts/errors.jade
+    include ../layouts/form-control-mixins.jade
+    form.form-horizontal(action='#{relativeURL("/"+message.id+"/update")}', method='POST', role="form")
+        +form-textarea-control("Message",2,3,"description", message?message.description:"")
+        +form-submit-control("Submit")

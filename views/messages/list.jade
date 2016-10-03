@@ -1,0 +1,20 @@
+extend ../layouts/admin.jade
+block append styles
+    style.
+        #add{margin-left:599;}
+block content
+    h2 Messages  
+    br
+    a#add.btn.btn-default(href='#{relativeURL("/new")}') Add    
+    table.table(class="table-hover")
+        thead
+            tr 
+                th Description
+                th Actions                                               
+        tbody
+            for message in messages
+                tr
+                    td.col-md-1 #{message.description}
+                    td.col-md-1                    
+                        a(href='#{relativeURL("/"+message.id+"/update")}') Edit | 
+                        a(href='#{relativeURL("/"+message.id+"/delete")}') Delete                                      

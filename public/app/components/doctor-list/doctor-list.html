@@ -1,0 +1,7 @@
+<label for="doctorListControl" class="col-sm-6 control-label">Available Doctors <span *ngIf="!!doctorList">({{doctorList?.length}})</span>:</label> 
+<select (change)="doctorSelected($event.target.value)" id="doctorListControl" class="doctor-list form-control" placeholder="Select a doctor">
+  <option value="" disabled selected hidden>Select a Doctor...</option>
+  <option *ngFor="let doctor of doctorList" [value]="doctor.personId">
+    {{doctor.personDisplayName}}
+  </option>
+</select>

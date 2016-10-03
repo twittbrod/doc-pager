@@ -1,0 +1,8 @@
+extends ./layouts/admin.jade
+block content
+    include ./layouts/errors.jade
+    include ./layouts/form-control-mixins.jade
+    form.form-horizontal(action='#{relativeURL("/setup")}', method='POST' role="form")
+        +form-control("text", "Username", "name", body?body.name:"")
+        +form-control("password", "Password", "password", body?body.email:"")
+        +form-submit-control("Add Admin")

@@ -1,0 +1,30 @@
+{
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "twittbrod/doc-pager:latest",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "portMappings": [{
+        "containerPort": 80,
+        "hostPort": 0
+      }]
+    },
+    "forcePullImage": true
+  },
+  "healthChecks": [{
+    "protocol": "TCP",
+    "portIndex": 0
+  }],
+  "id": "/ENV_FOLDER_NAME/ENV_DEPLOYMENT_NAME/docpager",
+  "instances": 1,
+  "cpus": 0.1,
+  "mem": 8,
+  "env": {
+    "TOKEN_SPARK_CLIENT": ENV_TOKEN_SPARK_CLIENT",
+    "SECRET_SPARK_CLIENT": ENV_SECRET_SPARK_CLIENT",
+    "MANTL_CONTROL": "ENV_MANTL_CONTROL",
+    "APP_URL": "http://ENV_FOLDER_NAME-ENV_DEPLOYMENT_NAME-docpagerbot.ENV_APP_DOMAIN",
+    "MONGO_URL": ENV_MONGO_URL
+  }
+}

@@ -1,0 +1,7 @@
+<label for="roomListControl" class="col-sm-6 control-label">Your Teams <span *ngIf="!!roomList"> ({{roomList?.length}})</span>:</label> 
+<select (change)="roomSelected($event.target.value)" id="roomListControl" class="room-list form-control">
+    <option value="" disabled selected hidden>Select a Team...</option>
+  <option *ngFor="let room of roomList" [value]="room.id">
+    {{room.name}}
+  </option>
+</select>

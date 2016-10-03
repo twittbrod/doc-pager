@@ -1,0 +1,39 @@
+mixin form-control(type, label, name, value, id)
+    .form-group
+        label.control-label.col-sm-2(for="#{name}") #{label}
+        .col-sm-10
+            input.form-control(type="#{type}", name="#{name}" value='#{value?value:""}' id='#{id?id:""}')
+mixin form-submit-control(value)
+    .form-group
+        .col-sm-offset-2.col-sm-10
+            input.btn.btn-primary(type='submit', value='#{value?value:"Submit"}')
+            
+mixin form-select-control(options, label, name, value, id)
+    .form-group
+        label.control-label.col-sm-2(for="#{name}") #{label}
+        .col-sm-10
+            select.form-control(name="#{name}" id='#{id?id:""}')
+                each val, key in options
+                    if (value == key)
+                        option(value=key selected="selected") #{val}
+                    else
+                        option(value=key) #{val}
+
+mixin form-textarea-control(label,rows,cols,name,value)
+    .form-group
+        label.control-label.col-sm-2(for="#{name}") #{label}
+        .col-sm-10        
+            textarea.form-control(rows="#{rows ? rows:''}", cols="#{cols ? cols:''}", name="#{name}") #{value ? value:''}
+
+mixin form-checkbox-control(type, label, name, value, id)
+    .form-group
+        label.control-label.col-sm-2
+        .col-sm-2        
+            input(type="#{type}", class="checkbox", name="#{name}", checked!=attributes.checked id='#{id?id:""}')
+            | #{label}
+            
+mixin form-control-searchbox(label, id)
+    .form-group
+        label.control-label.col-sm-2(for="#{name}") #{label}
+        .col-sm-10
+            input.form-control(type="text", id='#{id?id:""}')            

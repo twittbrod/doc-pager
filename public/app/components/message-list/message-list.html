@@ -1,0 +1,10 @@
+<div class="row">
+  <label class="control-label col-xs-12">Send a Message:</label>
+  <div class="col-md-10 col-md-offset-1 col-xs-12">
+  <div class="col-md-4" *ngFor="let button of buttonList">
+    <button style="white-space:initial" type="button" class="btn btn-success col-xs-12" (click)="messageSubmitted(button.description)">
+      {{button.description}}
+      </button>
+  </div>
+  </div>
+</div>

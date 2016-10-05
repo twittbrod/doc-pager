@@ -17,10 +17,28 @@ const apiRouter = require("./api/router");
 const adminRouter = require("./admin/router");
 const setupRouter = require("./setup-admin/router");
 const path = require('path');
+
+// twittbrod edits
+const dns = require('dns');
+// end twittbrod edits
+
 const app = express();
 app.use(morgan('dev'));
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/cisco-doc-pager-dev');
+
+// twittbrod edits
+console.log("process.env.MONGO_SERVICE: " + process.env.MONGO_SERVICE);
+dns.resolveSrv(process.env.MONGO_SERVICE, function onResolve(err, addresses) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('addresses:', JSON.stringify(addresses);
+        mongoose.connect(process.env.MONGO_SERVICE);
+    };
+};
+//mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/cisco-doc-pager-dev');
+// end twittbrod edits
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', apiRouter);

@@ -12,6 +12,10 @@ import * as adminRouter from "./admin/router";
 import * as setupRouter from "./setup-admin/router"
 import * as path from 'path';
 
+// twittbrod edits
+import * as dns from 'dns';
+// end twittbrod edits
+
 const app : express.Application = express();
 
 app.use(morgan('dev'));

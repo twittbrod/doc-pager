@@ -9,6 +9,7 @@
     "start": "./node_modules/typescript/bin/tsc && pm2 start main"
   },
   "dependencies": {
+    "dns": "^0.2.2",
     "bcrypt": "^0.8.6",
     "body-parser": "^1.13.3",
     "ciscospark": "^0.6.8",

@@ -19,7 +19,7 @@ echo "What deployment name do you want to use?"
 read deployment_name
 
 echo "Uninstalling the docpagerbot at $folder_name/$deployment_name"
-curl -k -X DELETE -u $mantl_user:$mantl_password https://$control_address:8080/v2/apps/$folder_name/$deployment_name/docpagerbot \
+curl -k -X DELETE -u $mantl_user:$mantl_password https://$control_address:8080/v2/apps/$folder_name/$deployment_name/docpagerapp \
 -H "Content-type: application/json"
 echo
 

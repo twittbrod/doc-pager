@@ -21,7 +21,7 @@ deploy:
       username: $$MANTL_USERNAME
       password: $$MANTL_PASSWORD
     urls:
-      - https://$$MANTL_CONTROL/marathon/v2/apps/imapex/docpager/docpagerbot/restart?force=true
+      - https://$$MANTL_CONTROL/marathon/v2/apps/imapex/docpager/docpagerapp/restart?force=true
 
 notify:
   spark:

@@ -20,12 +20,12 @@ read folder_name
 echo
 echo "What deployment name do you want to use?"
 read deployment_name
-echo
-echo "*We need some details on your Mongo instance.*"
-echo
-echo "What is your MongoDB URL?"
-read mongo_url
-echo
+#echo
+#echo "*We need some details on your Mongo instance.*"
+#echo
+#echo "What is your MongoDB URL?"
+#read mongo_url
+#echo
 #echo "What is the service address for Mongo?"
 #read mongo_service
 #echo
@@ -48,7 +48,7 @@ sed -i "" -e "s/ENV_MANTL_CONTROL/$control_address/g" deploy-doc-pager.json
 sed -i "" -e "s/ENV_DEPLOYMENT_NAME/$deployment_name/g" deploy-doc-pager.json
 sed -i "" -e "s/ENV_FOLDER_NAME/$folder_name/g" deploy-doc-pager.json
 sed -i "" -e "s/ENV_APP_DOMAIN/$mantl_domain/g" deploy-doc-pager.json
-sed -i "" -e "s/ENV_MONGO_URL/$mongo_url/g" deploy-doc-pager.json
+#sed -i "" -e "s/ENV_MONGO_URL/$mongo_url/g" deploy-doc-pager.json
 #sed -i "" -e "s/ENV_MONGO_SERVICE/$mongo_service/g" deploy-doc-pager.json
 
 echo " "

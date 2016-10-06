@@ -27,15 +27,16 @@ app.use(morgan('dev'));
 mongoose.Promise = global.Promise;
 
 // twittbrod edits
-console.log("process.env.MONGO_SERVICE: " + process.env.MONGO_SERVICE);
+var mongo_url = '';
 dns.resolveSrv(process.env.MONGO_SERVICE, function onResolve(err, addresses) {
     if (err) {
         console.log(err);
     } else {
-        console.log('addresses:', JSON.stringify(addresses);
-        mongoose.connect(process.env.MONGO_SERVICE);
+        console.log('addresses: ', addresses);
+        mongo_url = process.env.MONGO_SERVICE + ':' + addresses[0].port;
+        mongoose.connect(mongo_url);
     };
-};
+});
 //mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/cisco-doc-pager-dev');
 // end twittbrod edits
 

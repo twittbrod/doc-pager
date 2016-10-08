@@ -34,6 +34,7 @@ dns.resolveSrv(process.env.MONGO_SERVICE, function onResolve(err, addresses) {
     } else {
         console.log('addresses: ', addresses);
         mongo_url = process.env.MONGO_SERVICE + ':' + addresses[0].port;
+        process.env.MONGO_URL = mongo_url;
         mongoose.connect(mongo_url);
     };
 });

@@ -34,7 +34,7 @@ COPY ./spark-auth /usr/src/app/spark-auth
 COPY ./spec /usr/src/app/spec
 COPY ./spec/support /usr/src/app/spec/support
 COPY ./teams /usr/src/app/teams
-COPY ./vendors /usr/src/app/vendors
+#COPY ./vendors /usr/src/app/vendors
 COPY ./views /usr/src/app/views
 COPY ./views/layouts /usr/src/app/views/layouts
 COPY ./views/messages /usr/src/app/views/messages

@@ -18,8 +18,8 @@
   }],
   "id": "/ENV_FOLDER_NAME/ENV_DEPLOYMENT_NAME/docpagerapp",
   "instances": 1,
-  "cpus": 0.1,
-  "mem": 8,
+  "cpus": 0.2,
+  "mem": 64,
   "env": {
     "TOKEN_SPARK_CLIENT": "ENV_TOKEN_SPARK_CLIENT",
     "SECRET_SPARK_CLIENT": "ENV_SECRET_SPARK_CLIENT",

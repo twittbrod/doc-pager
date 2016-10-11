@@ -62,7 +62,13 @@ app.get('/callback/spark', (req, res, next) => __awaiter(this, void 0, void 0, f
     //     next(error);
     // }
     // res.status(OK).send(req.query);
+
+    // twittbrod edits
+    // former
     res.redirect(`${req.query.state}?code=${req.query.code}`);
+    //latter
+//    res.redirect(`http://imapex-docpager-docpagerapp.green.browndogtech.com?code=${req.query.code}`);
+    // end twittbrod edits
 }));
 app.use((error, req, res, next) => {
     //TODO: Render an error page.

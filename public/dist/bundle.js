@@ -231,9 +231,14 @@ var http_1 = require('@angular/http');
 var ApiService = (function () {
     function ApiService(_http) {
         this._http = _http;
+
+// twittbrod edits
 //        this.apiUrl = 'http://138.68.6.54';
         this.apiUrl = 'http://imapex-docpager-docpagerapp.green.browndogtech.com';
-        this.access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNTc5ODUyNDczMzRmZDI1MTY2MWRiYzdhIiwiaWF0IjoxNDY5NjAwMzI3fQ.W7Oms75J_VUYeTC2JnmQE76AXi5LoY0GOadTg8vPGAI';
+        console.log('here now');
+//        this.access_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiNTc5ODUyNDczMzRmZDI1MTY2MWRiYzdhIiwiaWF0IjoxNDY5NjAwMzI3fQ.W7Oms75J_VUYeTC2JnmQE76AXi5LoY0GOadTg8vPGAI';
+          this.access_token = void;
+// end twittbrod edits
     }
     ApiService.prototype.getRooms = function () {
         return this.getApi(this.apiUrl + "/api/teams");

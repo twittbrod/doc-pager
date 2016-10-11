@@ -1,13 +1,23 @@
 "use strict";
 const request = require("request");
+
+// twittbrod edits
 //exports.clientId = "XXXXXXXXXXXXXXXXXX";
 //exports.clientSecret = "XXXXXXXXXXXXXXXXXX";
 exports.clientId = process.env.TOKEN_SPARK_CLIENT;
 exports.clientSecret = process.env.SECRET_SPARK_CLIENT;
+// end twittbrod edits
 
-exports.oAuthAuthorizationURL = `https://api.ciscospark.com/v1/authorize?client_id=${exports.clientId}&response_type=code&redirect_uri=https%3A%2F%2Flearninglabs.cisco.com%2Fposts%2Ffiles%2Fcollab-spark-auth%2Fspark-auth.html&scope=spark%3Amessages_write%20spark%3Arooms_read%20spark%3Amemberships_read%20spark%3Amessages_read%20spark%3Arooms_write%20spark%3Apeople_read%20spark%3Amemberships_write&state=set_state_here`;
-exports.authorizedRedirectURLs = ["https://learninglabs.cisco.com/posts/files/collab-spark-auth/spark-auth.html", "http://54.194.198.47:3000/auth/callback"];
-var DEFAULT_REDIRECT_URI = "http://localhost:8080/callback/spark";
+// twittbrod edits -- added http://imapex-docpager-docpagerapp.green.browndogtech.com/ redirect URLs
+
+//exports.oAuthAuthorizationURL = `https://api.ciscospark.com/v1/authorize?client_id=${exports.clientId}&response_type=code&redirect_uri=https%3A%2F%2Flearninglabs.cisco.com%2Fposts%2Ffiles%2Fcollab-spark-auth%2Fspark-auth.html&scope=spark%3Amessages_write%20spark%3Arooms_read%20spark%3Amemberships_read%20spark%3Amessages_read%20spark%3Arooms_write%20spark%3Apeople_read%20spark%3Amemberships_write&state=set_state_here`;
+exports.oAuthAuthorizationURL = `https://api.ciscospark.com/v1/authorize?client_id=${exports.clientId}&response_type=code&redirect_uri=https%3A%2F%2Fimapex-docpager-docpagerapp.green.browndogtech.com&scope=spark%3Amessages_write%20spark%3Arooms_read%20spark%3Amemberships_read%20spark%3Amessages_read%20spark%3Arooms_write%20spark%3Apeople_read%20spark%3Amemberships_write&state=set_state_here`;
+exports.authorizedRedirectURLs = ["https://learninglabs.cisco.com/posts/files/collab-spark-auth/spark-auth.html", "http://54.194.198.47:3000/auth/callback", "http://imapex-docpager-docpagerapp.green.browndogtech.com", "http://imapex-docpager-docpagerapp.green.browndogtech.com:8080"];
+//var DEFAULT_REDIRECT_URI = "http://localhost:8080/callback/spark";
+var DEFAULT_REDIRECT_URI = "http://imapex-docpager-docpagerapp.green.browndogtech.com:8080";
+
+// end twittbrod edits
+
 var ROOT = "https://api.ciscospark.com/v1";
 var OAUTH_URL = ROOT + "/authorize";
 exports.TOKEN_URL = ROOT + "/access_token";
